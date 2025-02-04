@@ -19,14 +19,14 @@ const RecipeDetails = ({ recipe }) => {
       return;
     }
 
-    const response = await fetch('/api/recipe/' + recipe._id, {
+    const response = await fetch('/api/recipes/:id:' + recipe._id, {
       method: 'DELETE',
       headers: {
-        'Authorization': `Bearer ${user.token}`,
-      },
+        'Authorization': `Bearer ${user.token}`
+      }
     });
     const json = await response.json();
-
+  
     if (response.ok) {
       dispatch({ type: 'DELETE_RECIPE', payload: json });
     }
@@ -42,7 +42,7 @@ const RecipeDetails = ({ recipe }) => {
 
     const updatedRecipe = { title, ingredients, instructions, prepTime, difficulty };
 
-    const response = await fetch('/api/recipe/' + recipe._id, {
+    const response = await fetch('/api/recipes/:id:' + recipe._id, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',

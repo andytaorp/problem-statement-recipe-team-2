@@ -3,7 +3,7 @@ import { useAuthContext } from "../hooks/useAuthContext";
 import { RecipeContext } from '../context/RecipeContext';
 
 const RecipeForm = () => {
-  // States for form inputs
+
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
@@ -41,12 +41,11 @@ const RecipeForm = () => {
         payload: json, 
       });
 
-      // Reset form fields after successful submission
       setName('');
       setIngredients('');
       setInstructions('');
       setprepTime('');
-      setDifficulty('easy'); // Reset difficulty to default
+      setDifficulty('easy'); 
       setError(null); 
 
     } catch (err) {
@@ -65,14 +64,14 @@ const RecipeForm = () => {
       />
 
       <label>Ingredients:</label>
-      <textarea 
+      <input 
         value={ingredients} 
         onChange={(e) => setIngredients(e.target.value)} 
         required 
       />
 
       <label>Cooking Instructions:</label>
-      <textarea 
+      <input 
         value={instructions} 
         onChange={(e) => setInstructions(e.target.value)} 
         required 
@@ -92,7 +91,8 @@ const RecipeForm = () => {
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
       </select>
-
+      <br/>
+      <br/>
       <button type="submit">Add Recipe</button>
 
       {error && <p className="error">{error}</p>} 
