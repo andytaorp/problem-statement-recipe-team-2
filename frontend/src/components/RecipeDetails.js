@@ -3,7 +3,7 @@ import { useRecipeContext } from "../hooks/useRecipeContext";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useAuthContext } from "../hooks/useAuthContext";
 
-function RecipeDetails({ workout }) {
+function RecipeDetails({ recipe }) {
   const { dispatch } = useRecipeContext();
   const { user } = useAuthContext();
 
