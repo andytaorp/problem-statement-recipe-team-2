@@ -3,8 +3,8 @@ import { useRecipesContext } from "../hooks/useRecipesContext"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 // components
-import RecipesDetails from '../components/RecipesDetails'
-import RecipesForm from '../components/RecipesForm'
+import RecipeDetails from '../components/RecipesDetails'
+import RecipeForm from '../components/RecipesForm'
 
 const Home = () => {
   const {recipes, dispatch} = useRecipesContext()
