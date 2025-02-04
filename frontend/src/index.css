@@ -55,7 +55,7 @@ header a:hover {
   gap: 100px;
 }
 
-.workout-details {
+.recipe-details {
   background: #fff;
   border-radius: 8px;
   margin: 20px auto;
@@ -64,23 +64,23 @@ header a:hover {
   transition: transform 0.3s ease;
 }
 
-.workout-details:hover {
+.recipe-details:hover {
   transform: translateY(-5px);
 }
 
-.workout-details h4 {
+.recipe-details h4 {
   margin: 0 0 10px 0;
   font-size: 1.2em;
   color: var(--primary);
 }
 
-.workout-details p {
+.recipe-details p {
   margin: 0;
   font-size: 0.9em;
   color: #555;
 }
 
-.workout-details span {
+.recipe-details span {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -92,12 +92,12 @@ header a:hover {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.workout-details span:hover {
+.recipe-details span:hover {
   background: var(--primary);
   color: #fff;
 }
 
-/* new workout form */
+
 label, input {
   display: block;
 }
