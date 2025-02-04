@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useRecipeContext } from '../hooks/useRecipeContext';
-import { useAuthenticationContext } from '../hooks/useAuthenticationContext';
+import { useAuthContext } from '../hooks/useAuthContext';
 
 
 const RecipeDetails = ({ recipe }) => {
   const { dispatch } = useRecipeContext();
-  const { user } = useAuthenticationContext();
+  const { user } = useAuthContext();
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState(recipe.title);
   const [ingredients, setIngredients] = useState(recipe.ingredients);

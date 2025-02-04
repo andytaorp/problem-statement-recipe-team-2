@@ -1,21 +1,23 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useAuthContext } from "../hooks/useAuthContext"; 
+import { RecipeContext } from '../context/RecipeContext';
 
 const RecipeForm = () => {
   // States for form inputs
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
-  const [preptime, setPreptime] = useState('');
-  const [level, setLevel] = useState('');
+  const [difficulty, setDifficulty] = useState('');
+  const [prepTime, setprepTime] = useState('');
   const [error, setError] = useState(null);
 
   const { user } = useAuthContext(); 
+  const { dispatch } = useContext(RecipeContext); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const recipe = { name, ingredients, instructions, preptime, level };
+    const recipe = { name, ingredients, instructions, prepTime, difficulty };
 
     try {
       const response = await fetch('/api/recipes', {
@@ -26,7 +28,6 @@ const RecipeForm = () => {
           'Authorization': `Bearer ${user.token}`, 
         },
       });
-      
 
       if (!response.ok) {
         throw new Error('Unable to add recipe');
@@ -35,12 +36,18 @@ const RecipeForm = () => {
       const json = await response.json();
       console.log(json);
 
-      
+
+      dispatch({
+        type: 'CREATE_RECIPE',
+        payload: json, 
+      });
+
+
       setName('');
       setIngredients('');
       setInstructions('');
-      setPreptime('');
-      setLevel('');
+      setprepTime('');
+      setDifficulty('');
       setError(null); 
 
     } catch (err) {
@@ -75,13 +82,13 @@ const RecipeForm = () => {
       <label>Preparation Time (mins):</label>
       <input 
         type="number" 
-        value={preptime} 
-        onChange={(e) => setPreptime(e.target.value)} 
+        value={prepTime} 
+        onChange={(e) => setprepTime(e.target.value)} 
         required 
       />
 
       <label>Difficulty Level:</label>
-      <select value={level} onChange={(e) => setLevel(e.target.value)} required>
+      <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)} required>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>
         <option value="hard">Hard</option>
