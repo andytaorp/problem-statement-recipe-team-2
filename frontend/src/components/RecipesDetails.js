@@ -63,7 +63,7 @@ const RecipeDetails = ({ recipe }) => {
     <div className="recipe-details">
       {isEditing ? (
         <form onSubmit={handleEdit}>
-          <label>Recipe Name:</label>
+          <label>Recipe Name: </label>
           <input
             type="text"
             value={title}
