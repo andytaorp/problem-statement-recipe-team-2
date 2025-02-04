@@ -7,7 +7,7 @@ const RecipeForm = () => {
   const [name, setName] = useState('');
   const [ingredients, setIngredients] = useState('');
   const [instructions, setInstructions] = useState('');
-  const [difficulty, setDifficulty] = useState('');
+  const [difficulty, setDifficulty] = useState('easy'); // Set default difficulty to "easy"
   const [prepTime, setprepTime] = useState('');
   const [error, setError] = useState(null);
 
@@ -36,18 +36,17 @@ const RecipeForm = () => {
       const json = await response.json();
       console.log(json);
 
-
       dispatch({
         type: 'CREATE_RECIPE',
         payload: json, 
       });
 
-
+      // Reset form fields after successful submission
       setName('');
       setIngredients('');
       setInstructions('');
       setprepTime('');
-      setDifficulty('');
+      setDifficulty('easy'); // Reset difficulty to default
       setError(null); 
 
     } catch (err) {
