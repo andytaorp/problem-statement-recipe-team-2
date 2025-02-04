@@ -21,14 +21,14 @@ export const recipesReducer = (state, action) => {
   }
 }
 
-export const RecipesContextProvider = ({ children }) => {
+export const RecipeContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(recipesReducer, {
-    recipes: null
+    recipes: [] 
   })
 
   return (
-    <RecipesContext.Provider value={{...state, dispatch}}>
-      { children }
-    </RecipesContext.Provider>
+    <RecipeContext.Provider value={{...state, dispatch}}>
+      {children}
+    </RecipeContext.Provider>
   )
 }
