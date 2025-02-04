@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRecipeContext } from "../hooks/useRecipeContext";
-import {useAuthContext} from "../hooks/useRecipeContext";
+import {useAuthContext} from "../hooks/useAuthContext";
 
 const RecipeForm = () => {
   // States for form inputs
