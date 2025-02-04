@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { useRecipeContext } from "../hooks/useRecipeContext";
-import {useAuthContext} from "../hooks/useAuthContext";
+import { useAuthContext } from "../hooks/useAuthContext"; 
 
 const RecipeForm = () => {
   // States for form inputs
@@ -9,7 +8,9 @@ const RecipeForm = () => {
   const [instructions, setInstructions] = useState('');
   const [preptime, setPreptime] = useState('');
   const [level, setLevel] = useState('');
-  const [error, setError] = useState(null); 
+  const [error, setError] = useState(null);
+
+  const { user } = useAuthContext(); 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,25 +23,28 @@ const RecipeForm = () => {
         body: JSON.stringify(recipe),
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${user.token}`, 
         },
       });
+      
 
       if (!response.ok) {
         throw new Error('Unable to add recipe');
       }
 
       const json = await response.json();
-      console.log(json); 
+      console.log(json);
+
       
-      // Reset form after successful submission
       setName('');
       setIngredients('');
       setInstructions('');
       setPreptime('');
       setLevel('');
-      setError(null); // Reset error
+      setError(null); 
+
     } catch (err) {
-      setError(err.message); // Set error message on failure
+      setError(err.message); 
     }
   };
 
