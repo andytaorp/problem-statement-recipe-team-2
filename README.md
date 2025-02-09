@@ -4,7 +4,7 @@
 Alson - Created the Home and Navbar page and Recipe Context
 Nico - Created the Recipes Details
 Qistina - Created the Recipes Form
-Amelia - Created the Auth Context, Login, Logout, Signup, useReciepe Context, useAuthContext looks + Debug the Recipe Details and Recipes Form. Fix the refresh issues with the Home.js
+Amelia - Created the Auth Context, Login, Logout, Signup, useReciepe Context, useAuthContext looks + Debug the Recipe Details and Recipes Form. Fix the refresh issues with the Home.js, fix some part of the website CSS
 Zhi Xin - Created the Pages + Debug [Login and Sign up Pages]
 
 Link to Live Site: https://recipe-app-starter-frontend.onrender.com
