@@ -72,14 +72,14 @@ const RecipeDetails = ({ recipe }) => {
           />
 
           <label>Ingredients:</label>
-          <textarea
+          <input
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
             required
           />
 
           <label>Cooking Instructions:</label>
-          <textarea
+          <input
             value={instructions}
             onChange={(e) => setInstructions(e.target.value)}
             required
