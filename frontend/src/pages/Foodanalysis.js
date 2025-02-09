@@ -1,4 +1,4 @@
-// for my team members who didn't know how to do the AI, all the fetch "commands" are in this link - amelia
+// for my team members who didn't know how to do the AI, all the fetch "commands" are in this link "https://api.logmeal.com/api/docs/" - amelia
 
 import React, { useState } from 'react';
 
