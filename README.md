@@ -4,7 +4,7 @@
 Alson - Created the Home and Navbar page and Recipe Context
 Nico - Created the Recipes Details
 Qistina - Created the Recipes Form
-Amelia - Created the Auth Context, Login, Logout, Signup, useReciepe Context, useAuthContext looks + Debug the Recipe Details and Recipes Form 
+Amelia - Created the Auth Context, Login, Logout, Signup, useReciepe Context, useAuthContext looks + Debug the Recipe Details and Recipes Form. Fix the refresh issues with the Home.js
 Zhi Xin - Created the Pages + Debug [Login and Sign up Pages]
 
 [Updated on 4/2/2025]
