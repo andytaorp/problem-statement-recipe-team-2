@@ -1,4 +1,4 @@
-// for my team members who didn't know how to do the AI, all the fetch "commands" are in this link
+// for my team members who didn't know how to do the AI, all the fetch "commands" are in this link - amelia
 
 import React, { useState } from 'react';
 
