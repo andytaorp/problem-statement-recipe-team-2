@@ -16,6 +16,9 @@ const Navbar = () => {
         <Link to="/">
           <h1>Recipe Book</h1>
         </Link>
+        <div>
+            <Link to="/nutritionalanalysis">Nutritional Analysis</Link>
+        </div>
         <nav>
           {user && (
             <div>
