@@ -28,25 +28,20 @@ const RecipeForm = () => {
           'Authorization': `Bearer ${user.token}`, 
         },
       });
-
-      if (!response.ok) {
-        throw new Error('Unable to add recipe');
-      }
-
+      
       const json = await response.json();
-      console.log(json);
+      
+      if (!response.ok) {
+        setError(json.error)
+    }
 
-      dispatch({
-        type: 'CREATE_RECIPE',
-        payload: json, 
-      });
-
-      setName('');
-      setIngredients('');
-      setInstructions('');
-      setprepTime('');
-      setDifficulty('easy'); 
-      setError(null); 
+    setName('');
+    setIngredients('');
+    setInstructions('');
+    setprepTime('');
+    setDifficulty('easy');
+    setError(null); 
+    dispatch({ type: 'CREATE_RECIPE', payload: json });
 
     } catch (err) {
       setError(err.message); 

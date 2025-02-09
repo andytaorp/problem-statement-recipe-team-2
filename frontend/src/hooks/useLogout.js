@@ -11,7 +11,7 @@ export const useLogout = () => {
 
     dispatch({ type: 'LOGOUT' })
 
-    dispatchRecipes({ type: 'SET_RECIPE', payload: [] })  
+    dispatchRecipes({ type: 'SET_RECIPE', payload: null })  
   }
 
   return { logout }

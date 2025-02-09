@@ -13,7 +13,7 @@ const RecipeDetails = ({ recipe }) => {
   const [prepTime, setPrepTime] = useState(recipe.prepTime || '');
   const [difficulty, setDifficulty] = useState(recipe.difficulty || 'Easy'); 
 
-  // Handle delete recipe
+  // to handle deleting recipe
   const handleClick = async () => {
     if (!user) {
       return;
@@ -32,7 +32,7 @@ const RecipeDetails = ({ recipe }) => {
     }
   };
 
-  // Handle edit (save changes)
+  // to handle the edit and save changes
   const handleEdit = async (e) => {
     e.preventDefault();
 
@@ -55,7 +55,7 @@ const RecipeDetails = ({ recipe }) => {
 
     if (response.ok) {
       dispatch({ type: 'UPDATE_RECIPE', payload: json });
-      setIsEditing(false);  // Exit edit mode
+      setIsEditing(false);  
     }
   };
 
@@ -115,7 +115,7 @@ const RecipeDetails = ({ recipe }) => {
           <p><strong>Preparation Time:</strong> {recipe.prepTime} minutes</p>
           <p><strong>Difficulty:</strong> {recipe.difficulty}</p>
 
-          <span className="delete-icon" onClick={handleClick}>×</span>
+          <span className="delete-icon" onClick={handleClick}>Delete 🗑️</span>
           <button className="edit-btn" onClick={() => setIsEditing(true)}>Edit Recipe</button>
         </>
       )}

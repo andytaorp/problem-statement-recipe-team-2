@@ -17,22 +17,17 @@ export const useLogin = () => {
         body: JSON.stringify({ email, password }),
       })
  
-      // Check if the response status is OK
+      // to see response okay
       if (!response.ok) {
         const errorText = await response.text()
         throw new Error(errorText || 'Login failed, please try again later.')
       }
  
-      // Parse the response JSON
       const json = await response.json()
- 
-      // Save the user to local storage
       localStorage.setItem('user', JSON.stringify(json))
  
-      // Update the auth context with the user data
       dispatch({ type: 'LOGIN', payload: json })
  
-      // Reset loading state
       setIsLoading(false)
     } catch (err) {
       setIsLoading(false)
