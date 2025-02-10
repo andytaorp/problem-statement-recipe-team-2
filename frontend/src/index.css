@@ -153,12 +153,13 @@ nav {
   align-items: center;
 }
 
-nav a {
+nav a, .auth-links a{
   margin-left: 10px;
   color: var(--text);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s ease;
+  margin-right: 20px;
 }
 
 nav a:hover {
@@ -180,6 +181,40 @@ nav button {
 nav button:hover {
   background: var(--primary);
   color: #fff;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.profile-email {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
 }
 
 /* auth forms */
@@ -272,6 +307,4 @@ nav span {
   margin-right: 30px;
   color: var(--text);
 }
-
-
 
