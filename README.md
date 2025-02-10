@@ -33,7 +33,7 @@
 https://recipe-app-starter-frontend.onrender.com
 
 ## Site Main Login Details
-Email: team2@gmail.com
-Password: s]ru(&8DX~-`%R[^CTh!<v
+- Email: `team2@gmail.com`
+- Password: ``s]ru(&8DX~-`%R[^CTh!<v``
 
 [Updated on 10/2/2025]
