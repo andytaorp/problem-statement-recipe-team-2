@@ -18,13 +18,13 @@ app.use("/api/recipes", recipeRoutes);
 
 const PORT = process.env.PORT || 4000;
 mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => {
-    // Listen for requests
-    app.listen(PORT, () => {
-      console.log("Connected to DB & listening on port", PORT);
+    .connect(process.env.MONGO_URI)
+    .then(() => {
+        // Listen for requests
+        app.listen(PORT, () => {
+            console.log("Connected to DB & listening on port", PORT);
+        });
+    })
+    .catch((err) => {
+        console.log(err);
     });
-  })
-  .catch((err) => {
-    console.log(err);
-  });
